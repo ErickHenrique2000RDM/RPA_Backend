@@ -1,40 +1,33 @@
 const kabum = require('./kabum')
 const pichau = require('./pichau')
 const terabyte = require('./terabyte')
-const imprimir = require('./imprime')
 const puppeteer = require('puppeteer');
 
 const pesquisa = async (res, nome) => {
     const browser = await puppeteer.launch({ 
         headless: false,
-        userDataDir: './cache'
-        // args: [
-        //     '--window-size=200,200',
-        // ]
+        userDataDir: './cache',
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
      });
     try{
         const page = await browser.newPage();
-        // await page.setViewport({
-        //     width: 200,
-        //     height: 200, 
-        // })
+        await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36');
         await page.setDefaultNavigationTimeout(0);
-        const listaKabum = await kabum.pesquisa(page, nome);
-        console.log("Kabum finalizado");
+        // const listaKabum = await kabum.pesquisa(page, nome);
+        const listaKabum = [];
         await page.waitForTimeout(2000);
         const listaPichau = await pichau.pesquisa(page, nome);
-        console.log("Pichau finalizado");
         await page.waitForTimeout(1000);
         const listaTerabyte = await terabyte.pesquisa(page, nome);
-        console.log("Terabyte finalizado");
         await page.waitForTimeout(1000);
         const listas = [listaKabum, listaPichau, listaTerabyte]
-        //await imprimir(page, listas)
-        console.log("Fim");
         browser.close();
         res.status(200).send(JSON.stringify({listas}));
     }catch(err){
-        //browser.close();
+        browser.close();
         res.status(500).send(JSON.stringify({erro: err.message}))
     }
     
