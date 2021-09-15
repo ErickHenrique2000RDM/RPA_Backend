@@ -8,20 +8,14 @@ const pesquisa = async (page, pesquisar) => {
 
         const array = [...nodeList];
         const listPrecos = array.map((item) => {
-            try{
-                var preco
-                try{
-                    preco = item.childNodes[1].childNodes[7].childNodes[1].childNodes[5].childNodes[0].innerText
-                }catch(e){
-                    preco = 'indisponivel';
-                }
-                return {
-                    nome: item.childNodes[1].childNodes[1].childNodes[1].childNodes[1].alt,
-                    link: item.childNodes[1].childNodes[1].childNodes[1].href,
-                    preco: preco
-                }
-            }catch(e){
-                return null
+            const preco = item.querySelector('.prod-new-price').childNodes[0].innerText;
+            const nome = item.querySelector('.prod-name').title;
+            const link = item.querySelector('.prod-name').href;
+
+            return{
+                nome,
+                preco,
+                link
             }
         }, pesquisar).filter(item => {return(item !== null || item.nome !== "")})
 

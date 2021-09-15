@@ -1,3 +1,5 @@
-2021/08/02-19:53:52.541 2ba8 Reusing MANIFEST C:\Users\user\Documents\Nova pasta\RPA Projeto\cache\Default\Session Storage/MANIFEST-000001
-2021/08/02-19:53:52.543 2ba8 Recovering log #39
-2021/08/02-19:53:52.544 2ba8 Reusing old log C:\Users\user\Documents\Nova pasta\RPA Projeto\cache\Default\Session Storage/000039.log 
+2021/09/14-16:43:17.231 3a7c Reusing MANIFEST C:\Users\user\Documents\Nova pasta\RPA Projeto\cache\Default\Session Storage/MANIFEST-000001
+2021/09/14-16:43:17.232 3a7c Recovering log #39
+2021/09/14-16:43:17.240 3a7c Level-0 table #42: started
+2021/09/14-16:43:17.258 3a7c Level-0 table #42: 58575 bytes OK
+2021/09/14-16:43:17.508 3a7c Delete type=0 #39

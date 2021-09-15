@@ -14,8 +14,7 @@ const pesquisa = async (page, pesquisar) => {
 
         const listPrecos = array.map((item) => {
             try{
-                const nome = item.querySelectorAll('.MuiTypography-root.jss62.jss63.MuiTypography-h6');
-                const nomeFinal = nome[0].innerText;
+                const nome = item.querySelector('.MuiTypography-root.jss62.jss63.MuiTypography-h6').innerText;
                 const preco = item.querySelectorAll('.jss65');
                 var precoFinal;
                 if(preco.length > 0){
@@ -24,12 +23,12 @@ const pesquisa = async (page, pesquisar) => {
                     precoFinal = 'indisponivel';
                 }
 
-                const link = item.querySelectorAll('.jss16');
-                const linkFinal = link[0].href
+                const link = item.querySelector('.jss16').href;
+                // const linkFinal = link[0].href
                 
                 return {
-                    nome: nomeFinal,
-                    link: linkFinal,
+                    nome,
+                    link,
                     preco: precoFinal
                 }
             }catch(e){
