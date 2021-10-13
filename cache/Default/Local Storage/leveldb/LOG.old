@@ -1,5 +1,3 @@
-2021/09/14-16:43:17.170 2200 Reusing MANIFEST C:\Users\user\Documents\Nova pasta\RPA Projeto\cache\Default\Local Storage\leveldb/MANIFEST-000001
-2021/09/14-16:43:17.176 2200 Recovering log #74
-2021/09/14-16:43:17.177 2200 Level-0 table #77: started
-2021/09/14-16:43:17.498 2200 Level-0 table #77: 21782 bytes OK
-2021/09/14-16:43:17.555 2200 Delete type=0 #74
+2021/10/13-14:26:10.430 cbc Reusing MANIFEST C:\Users\user\Documents\Nova pasta\RPA Projeto\cache\Default\Local Storage\leveldb/MANIFEST-000001
+2021/10/13-14:26:10.435 cbc Recovering log #83
+2021/10/13-14:26:10.436 cbc Reusing old log C:\Users\user\Documents\Nova pasta\RPA Projeto\cache\Default\Local Storage\leveldb/000083.log 

@@ -6,16 +6,18 @@ const pesquisa = async (page, pesquisar) => {
     await page.goto(`https://www.kabum.com.br/busca?query=${pesquisar}&page_number=1&page_size=20&facet_filters=&sort=price`, {waitUntil: 'networkidle2'});
 
     const lista = await page.evaluate((pesquisar) => {
-        var nodeList = document.querySelectorAll('.sc-ipXKqB.jlZVda.productCard');
+        var nodeList = document.querySelectorAll('.productCard');
         if(!nodeList){
             nodeList = document.querySelectorAll('div.sc-fzqARJ.eITELq');
         }
         const array = [...nodeList];
 
         const listPrecos = array.map((item) => {
-                const preco = item.querySelector('.sc-gJWqzi.fIvuMz.priceCard').innerText;
-                const nome = item.querySelector('.sc-bHwgHz.hjoTtD.sc-ipZHIp.kkHpiL.nameCard').innerText;
-                const link = item.querySelector('.sc-dliRfk.jbxMFH').href;
+            console.log('comecei item')
+                const preco = item.querySelector('.priceCard').innerText;
+                const nome = item.querySelector('.nameCard').innerText;
+                const link = item.querySelector('a').href;
+                console.log(preco + ' ' + nome + ' ' + link);
                 return {
                     preco,
                     nome,
