@@ -2,9 +2,9 @@ const express = require('express');
 const router = require('./routes')
 const api = express();
 const allowCors = require('./routes/cors')
-const config = require('dotenv/config');
+require('dotenv/config');
 
-config();
+//config();
 
 const port = 8000;
 
