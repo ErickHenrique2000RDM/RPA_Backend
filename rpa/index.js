@@ -5,9 +5,7 @@ const puppeteer = require('puppeteer');
 
 const pesquisa = async (res, nome) => {
     const browser = await puppeteer.launch({ 
-        headless: true,
-        userDataDir: './cache',
-        args: [
+        'args': [
             '--no-sandbox',
             '--disable-setuid-sandbox'
         ]
