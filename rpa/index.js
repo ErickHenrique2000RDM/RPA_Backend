@@ -15,7 +15,7 @@ const pesquisa = async (res, nome) => {
         await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36');
         await page.setDefaultNavigationTimeout(0);
         const listaKabum = await kabum.pesquisa(page, nome);
-        // await page.waitForTimeout(1000);
+        // await page.waitForTimeout(60000);
         const listaPichau = await pichau.pesquisa(page, nome);
         // await page.waitForTimeout(1000);
         const listaTerabyte = await terabyte.pesquisa(page, nome);

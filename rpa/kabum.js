@@ -27,10 +27,17 @@ const pesquisa = async (page, pesquisar) => {
             
         }, pesquisar).filter(item => item !== null)
 
+
         return listPrecos
     }, pesquisar)
 
-    return lista;
+    return lista.sort((a, b) => {
+        if(parseInt(a.preco.replace('R$', '').replace('.', '').replace(',','.')) > parseInt(b.preco.replace('R$', '').replace('.', '').replace(',','.'))){
+            return 1;
+        }else{
+            return -1
+        }
+      });
 }
 
 module.exports = {pesquisa}
